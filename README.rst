@@ -1,8 +1,8 @@
 MirrorBoardOSX
 ==============
-Enable left-handed typing by mirroring right-hand keys to left hand when SPACE is held down. Uses the Karabiner keyboard customizer.
+Enable left-handed typing by mirroring right-hand keys to left hand when SPACE is held down. Works on OSX using the Karabiner keyboard customizer.
 
-Based on XKCD's Mirrorboard and Mirror-QWERTY with custom modifications (for OS X).
+Based on XKCD's Mirrorboard and Mirror-QWERTY with custom modifications.
 
 Primarily supports QWERTY. Some support for Dvorak layouts remains from a prior github fork.
 
