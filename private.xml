@@ -1,20 +1,25 @@
 <?xml version="1.0"?>
-<root>    
+<root>
+
+    <modifierdef>MIRROR_MOD_KEY</modifierdef>
+
     <item>
         <name>MirrorBoardOSX</name>
-        <appendix>XKCD's Mirrorboard merged with Mirror-QWERTY (for OS X)</appendix>
+        <appendix>Enable left-handed typing: Mirror right-hand keys to left hand when SPACE is held down</appendix>
+        <appendix>Based on XKCD's Mirrorboard and Mirror-QWERTY with custom modifications (for OS X)</appendix>
         <identifier>private.mirrorboardosx</identifier>
         
-        <!-- major difference: xkb has caps as a modifier key. I think that the space bar is much easier, more practical, and more common. -->
+        <!-- major difference: xkb has caps as a modifier key. I think that the MIRROR_MOD_KEY bar is much easier, more practical, and more common. -->
+        <autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::VK_MODIFIER_MIRROR_MOD_KEY, KeyCode::SPACE</autogen>
 
-        <autogen>--KeyToKey--
-            KeyCode::BACKQUOTE, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::BACKQUOTE, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::DELETE
         </autogen>
 
-        <!-- difference: xkb has space as the return key. Use TAB instead -->
-        <autogen>--KeyToKey--
-            KeyCode::TAB, ModifierFlag::SPACE,
+        <!-- difference: xkb has MIRROR_MOD_KEY as the return key. Use TAB instead -->
+        <autogen>__KeyToKey__
+            KeyCode::TAB, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::RETURN
         </autogen>
         
@@ -25,134 +30,134 @@
         <!-- difference: use the double modifier to map
          'qwe' to '[]\'
          'a' to ';' -->
-        <autogen>--KeyToKey--
-            KeyCode::Q, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::Q, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::BRACKET_LEFT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::W, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::W, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::BRACKET_RIGHT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::E, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::E, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::BACKSLASH
         </autogen>
 
         <!--
-         I map some double modifier letters to work similar to VIM movement
+         Map some double modifier letters to work similar to VIM movement
          keys. I found 'j' and 'k' came naturally mirrored but movement left and
          right made more sense mapped to 's' and 'g'.
          -->
-        <autogen>--KeyToKey--
-            KeyCode::S, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::S, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_LEFT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::D, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::D, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_UP
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::F, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::F, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_DOWN
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::G, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::G, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_RIGHT
         </autogen>
 
 
-        <autogen>--KeyToKey--
-            KeyCode::KEY_1, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_1, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::EQUAL
         </autogen>
 
-        <autogen>--KeyToKey--
-            KeyCode::KEY_2, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_2, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::MINUS
         </autogen>
 
-        <autogen>--KeyToKey--
-            KeyCode::KEY_3, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_3, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_0
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_4, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_4, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_9
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_5, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_5, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_8
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_6, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_6, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_7
         </autogen>
         
-        <autogen>--KeyToKey--
-            KeyCode::Q, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::Q, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::P
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::W, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::W, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::O
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::E, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::E, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::I
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::R, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::R, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::U
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::T, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::T, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::Y
         </autogen>
 
 
-        <autogen>--KeyToKey--
-            KeyCode::CAPSLOCK, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::CAPSLOCK, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::QUOTE
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::A, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::A, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::SEMICOLON
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::S, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::S, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::L
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::D, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::D, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::K
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::F, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::F, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::J
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::G, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::G, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::H
         </autogen>
 
-        <autogen>--KeyToKey--
-            KeyCode::Z, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::Z, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::SLASH
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::X, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::X, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::DOT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::C, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::C, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::COMMA
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::V, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::V, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::M
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::B, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::B, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::N
         </autogen>
     </item>
@@ -162,7 +167,7 @@
     
     <item>
         <name>DvorakMirrorBoardOSX</name>
-        <appendix>Port of XKCD's mirrorboard for OSX, Dvorak (z is 1, Tab is Delete, Space is Return)</appendix>
+        <appendix>Port of XKCD's mirrorboard for OSX, Dvorak (z is 1, Tab is Delete, MIRROR_MOD_KEY is Return)</appendix>
         <identifier>private.dvorakmirrorboardosx</identifier>
         
         <!-- This version mirrors Dvorak type when key-caps is depressed for one handed left handed typing.
@@ -172,13 +177,13 @@
          difficult for me to figure out how to do with KeyRemap4MacBook so
          this remap relies on caps being a mode shift. Patch welcome! -->
         <!-- difference: xkb has tilde as the delete key -->
-        <autogen>--KeyToKey--
-            KeyCode::TAB, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::TAB, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::DELETE
         </autogen>
         
-        <autogen>--KeyToKey--
-            KeyCode::SPACE, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::SPACE, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::RETURN
         </autogen>
         
@@ -188,32 +193,32 @@
         
         <!-- difference: I use a double modifier (CAPS+COMMAND) to get
          '-+' rather than replace '!@#' -->
-        <autogen>--KeyToKey--
-            KeyCode::KEY_1, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_1, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::EQUAL
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_2, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_2, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::MINUS
         </autogen>
         
         <!-- difference: I also use the double modifier to map 
          'qwe' to '[]\'
          'a' to ';' -->
-        <autogen>--KeyToKey--
-            KeyCode::Q, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::Q, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::BRACKET_LEFT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::W, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::W, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::BRACKET_RIGHT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::E, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::E, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::BACKSLASH
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::A, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::A, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::SEMICOLON
         </autogen>
         
@@ -222,118 +227,118 @@
          keys. I found 'j' and 'k' came naturally mirrored but movement left and
          right made more sense mapped to 's' and 'g'.
          -->
-        <autogen>--KeyToKey--
-            KeyCode::S, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::S, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_LEFT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::D, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::D, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_UP
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::F, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::F, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_DOWN
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::G, ModifierFlag::SPACE | ModifierFlag::COMMAND_L,
+        <autogen>__KeyToKey__
+            KeyCode::G, ModifierFlag::MIRROR_MOD_KEY | ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_RIGHT
         </autogen>
         
         <!-- difference: for Dvorak: since 'z' is left out, or, where you want to type it is the SHIFT key, I mapped it to '1'. An imperfect solution. -->
-        <autogen>--KeyToKey--
-            KeyCode::KEY_1, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_1, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::SLASH
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_2, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_2, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_9
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_3, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_3, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_8
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_4, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_4, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_7
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_5, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_5, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_6
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::KEY_6, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::KEY_6, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::KEY_5
         </autogen>
         
-        <autogen>--KeyToKey--
-            KeyCode::Q, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::Q, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::P
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::W, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::W, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::O
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::E, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::E, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::I
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::R, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::R, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::U
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::T, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::T, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::Y
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::Y, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::Y, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::T
         </autogen>
         
         <!-- difference: for Dvorak:otherwise 'a' would be DASH instead of 's' -->
-        <autogen>--KeyToKey--
-            KeyCode::A, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::A, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::SEMICOLON
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::S, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::S, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::L
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::D, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::D, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::K
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::F, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::F, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::J
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::G, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::G, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::H
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::H, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::H, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::G
         </autogen>
         
-        <autogen>--KeyToKey--
-            KeyCode::Z, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::Z, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::DOT
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::X, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::X, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::COMMA
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::C, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::C, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::M
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::V, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::V, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::N
         </autogen>
-        <autogen>--KeyToKey--
-            KeyCode::B, ModifierFlag::SPACE,
+        <autogen>__KeyToKey__
+            KeyCode::B, ModifierFlag::MIRROR_MOD_KEY,
             KeyCode::B
         </autogen>
     </item>
